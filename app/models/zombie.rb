@@ -7,8 +7,8 @@ class Zombie < ApplicationRecord
   has_many :zombie_weapons, dependent: :destroy, autosave: true
   has_many :weapons, through: :zombie_weapons
 
-  scope :search, ->(params){
-    search_scope = self.all
+  scope :search, lambda { |params|
+    search_scope = all
     search_scope = search_scope.where('LOWER(zombies.name) LIKE LOWER(:name)', name: "%#{params[:name]}%") if params[:name]
     search_scope = search_scope.where(hit_points: params[:hit_points]) if params[:hit_points]
     search_scope = search_scope.where(brains_eaten: params[:brains_eaten]) if params[:brains_eaten]

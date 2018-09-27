@@ -16,7 +16,7 @@ class ZombiesController < ApplicationController
   description 'Return or search for zombies.'
   formats ['json']
   def index
-    @zombies = Zombie.search(search_params).paginate(:page => params[:page] || 1, :per_page => params[:per_page] || 30)
+    @zombies = Zombie.search(search_params).paginate(page: params[:page] || 1, per_page: params[:per_page] || 30)
     render json: @zombies
   end
 
@@ -89,7 +89,7 @@ class ZombiesController < ApplicationController
   error :unprocessable_entity, 'Could not save the zombie.'
   formats ['json']
   def add_armors
-    if armor_ids = params[:armor_ids]
+    if (armor_ids = params[:armor_ids])
       armor_ids.each do |armor_id|
         @zombie.zombie_armors.build(armor_id: armor_id)
       end
@@ -110,7 +110,7 @@ class ZombiesController < ApplicationController
   error :unprocessable_entity, 'Could not save the zombie.'
   formats ['json']
   def add_weapons
-    if weapon_ids = params[:weapon_ids]
+    if (weapon_ids = params[:weapon_ids])
       weapon_ids.each do |weapon_id|
         @zombie.zombie_weapons.build(weapon_id: weapon_id)
       end
@@ -129,11 +129,12 @@ class ZombiesController < ApplicationController
   description 'Allow zombies to eat brains.'
   formats ['json']
   def eat_brain
-      @zombie.increment!(:brains_eaten)
-      render json: @zombie
+    @zombie.increment!(:brains_eaten)
+    render json: @zombie
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_zombie
     @zombie = Zombie.find(params[:id])
@@ -141,10 +142,10 @@ class ZombiesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def zombie_params
-    params.require(:zombie).permit(:name, :hit_points, :speed, :brains_eaten, :turn_date, :armor_ids => [], :weapon_ids => [])
+    params.require(:zombie).permit(:name, :hit_points, :speed, :brains_eaten, :turn_date, armor_ids: [], weapon_ids: [])
   end
 
   def search_params
-    params.permit(:name, :hit_points, :speed, :brains_eaten, :turn_date, :armor_ids => [], :weapon_ids => [])
+    params.permit(:name, :hit_points, :speed, :brains_eaten, :turn_date, armor_ids: [], weapon_ids: [])
   end
 end

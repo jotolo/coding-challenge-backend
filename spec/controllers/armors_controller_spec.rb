@@ -44,14 +44,16 @@ RSpec.describe ArmorsController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a success response', :show_in_doc do
-      armor = Armor.create! valid_attributes
+      Armor.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
 
     it 'returns a 10 elements', :show_in_doc do
       FactoryBot.create_list(:armor, 50)
-      get :index, params: {page: 1, per_page: 10}, session: valid_session
+      get :index,
+          params: { page: 1, per_page: 10 },
+          session: valid_session
       armors = JSON.parse(response.body)
       expect(armors.count).to eq(10)
     end
@@ -59,9 +61,11 @@ RSpec.describe ArmorsController, type: :controller do
 
   describe 'GET #index with :zombie_id' do
     it 'returns a success response', :show_in_doc do
-      armor = Armor.create! valid_attributes
+      Armor.create! valid_attributes
       zombie = FactoryBot.create(:zombie)
-      get :index, params: {zombie_id: zombie.id}, session: valid_session
+      get :index,
+          params: { zombie_id: zombie.id },
+          session: valid_session
       expect(response).to be_success
     end
   end
@@ -69,7 +73,9 @@ RSpec.describe ArmorsController, type: :controller do
   describe 'GET #show' do
     it 'returns a success response', :show_in_doc do
       armor = Armor.create! valid_attributes
-      get :show, params: {id: armor.to_param}, session: valid_session
+      get :show,
+          params: { id: armor.to_param },
+          session: valid_session
       expect(response).to be_success
     end
   end
@@ -78,13 +84,15 @@ RSpec.describe ArmorsController, type: :controller do
     context 'with valid params' do
       it 'creates a new Armor', :show_in_doc do
         expect {
-          post :create, params: {armor: valid_attributes}, session: valid_session
+          post :create, params: { armor: valid_attributes }, session: valid_session
         }.to change(Armor, :count).by(1)
       end
 
       it 'renders a JSON response with the new armor', :show_in_doc do
 
-        post :create, params: {armor: valid_attributes}, session: valid_session
+        post :create,
+             params: { armor: valid_attributes },
+             session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
         expect(response.location).to eq(armor_url(Armor.last))
@@ -94,7 +102,9 @@ RSpec.describe ArmorsController, type: :controller do
     context 'with invalid params', :show_in_doc do
       it 'renders a JSON response with errors for the new armor' do
 
-        post :create, params: {armor: invalid_attributes}, session: valid_session
+        post :create,
+             params: { armor: invalid_attributes },
+             session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -110,7 +120,9 @@ RSpec.describe ArmorsController, type: :controller do
       it 'updates the requested armor', :show_in_doc do
         armor = Armor.create! valid_attributes
         update_attributes = new_attributes
-        put :update, params: {id: armor.to_param, armor: update_attributes}, session: valid_session
+        put :update,
+            params: { id: armor.to_param, armor: update_attributes },
+            session: valid_session
         armor.reload
         expect(armor.name).to eq(new_attributes[:name])
         expect(armor.defense_points).to eq(new_attributes[:defense_points])
@@ -121,7 +133,9 @@ RSpec.describe ArmorsController, type: :controller do
       it 'renders a JSON response with the armor', :show_in_doc do
         armor = Armor.create! valid_attributes
 
-        put :update, params: {id: armor.to_param, armor: valid_attributes}, session: valid_session
+        put :update,
+            params: { id: armor.to_param, armor: valid_attributes },
+            session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
       end
@@ -131,7 +145,9 @@ RSpec.describe ArmorsController, type: :controller do
       it 'renders a JSON response with errors for the armor', :show_in_doc do
         armor = Armor.create! valid_attributes
 
-        put :update, params: {id: armor.to_param, armor: invalid_attributes}, session: valid_session
+        put :update,
+            params: { id: armor.to_param, armor: invalid_attributes },
+            session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -142,7 +158,7 @@ RSpec.describe ArmorsController, type: :controller do
     it 'destroys the requested armor' do
       armor = Armor.create! valid_attributes
       expect {
-        delete :destroy, params: {id: armor.to_param}, session: valid_session
+        delete :destroy, params: { id: armor.to_param }, session: valid_session
       }.to change(Armor, :count).by(-1)
     end
   end

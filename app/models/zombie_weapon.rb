@@ -5,7 +5,8 @@ class ZombieWeapon < ApplicationRecord
   before_create :set_durability
 
   private
+
   def set_durability
-    self.weapon_durability = self.weapon.durability || 0
+    self.weapon_durability = weapon.durability || 0
   end
 end

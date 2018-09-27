@@ -1,8 +1,6 @@
 class ArmorsController < ApplicationController
   before_action :set_armor, only: [:show, :update, :destroy]
 
-  # GET /armors
-  # GET /zombies/:zombie_id/armors
   api :GET, '/armors', 'Return all armors'
   api :GET, '/zombies/:zombie_id/armors', 'Return all armors belonging to an specific zombie.'
   param :page, Integer, 'Page number you want to list. Default: 1'
@@ -10,19 +8,17 @@ class ArmorsController < ApplicationController
   description 'Return all armors.'
   formats ['json']
   def index
-    if params[:zombie_id]
-      @armors = Zombie.find_by_id(params[:zombie_id])&.armors
-    else
-      @armors = Armor.all
-    end
+    @armors = if params[:zombie_id]
+                Zombie.find_by_id(params[:zombie_id])&.armors
+              else
+                Armor.all
+              end
 
-    @armors = @armors.paginate(:page => params[:page] || 1, :per_page => params[:per_page] || 30)
+    @armors = @armors.paginate(page: params[:page] || 1, per_page: params[:per_page] || 30)
 
     render json: @armors
   end
 
-  # GET /armors/1
-  # GET /zombies/:zombie_id/armors/1
   api :GET, '/armors/1', 'Return an specific armors'
   api :GET, '/zombies/:zombie_id/armors/1', 'Return an specific armors belonging to an specific zombie.'
   param :id, Integer, required: true
@@ -32,8 +28,6 @@ class ArmorsController < ApplicationController
     render json: @armor
   end
 
-  # POST /armors
-  # POST /zombies/:zombie_id/armors
   api :POST, '/armors', 'Create an armor'
   api :POST, '/zombies/:zombie_id/armors', 'Create an armor belonging to an specific zombie.'
   param :name, String, required: true
@@ -53,8 +47,6 @@ class ArmorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /armors/1
-  # PATCH/PUT /zombies/:zombie_id/armors/1
   api :PUT, '/armors/1', 'Update an armor'
   api :PUT, '/zombies/:zombie_id/armors/1', 'Update an armor belonging to an specific zombie.'
   param :id, Integer, required: true
@@ -73,8 +65,6 @@ class ArmorsController < ApplicationController
     end
   end
 
-  # DELETE /armors/1
-  # DELETE /zombies/:zombie_id/armors/1
   api :DELETE, '/armors/1', 'Destroy an armor'
   api :DELETE, '/zombies/:zombie_id/armors/1', 'Destroy an armor belonging to an specific zombie.'
   param :id, Integer, required: true
@@ -85,13 +75,14 @@ class ArmorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_armor
-      @armor = Armor.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def armor_params
-      params.require(:armor).permit(:name, :defense_points, :durability, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_armor
+    @armor = Armor.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def armor_params
+    params.require(:armor).permit(:name, :defense_points, :durability, :price)
+  end
 end
