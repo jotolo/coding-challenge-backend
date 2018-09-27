@@ -5,4 +5,15 @@ class Weapon < ApplicationRecord
   has_many :zombie_weapons, dependent: :destroy
   has_many :zombies, through: :zombie_weapons
 
+  def self.factory(params)
+    zombie_id = params.delete(:zombie_id)
+
+    new_weapon = Weapon.new(params)
+    if zombie_id
+      new_weapon.zombie_weapons.build(zombie_id: zombie_id)
+    end
+
+    new_weapon
+  end
+
 end
