@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901160504) do
+ActiveRecord::Schema.define(version: 20180927121722) do
 
   create_table "armors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170901160504) do
     t.bigint "armor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "armor_durability"
     t.index ["armor_id"], name: "index_zombie_armors_on_armor_id"
     t.index ["zombie_id"], name: "index_zombie_armors_on_zombie_id"
   end
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170901160504) do
     t.bigint "weapon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "weapon_durability"
     t.index ["weapon_id"], name: "index_zombie_weapons_on_weapon_id"
     t.index ["zombie_id"], name: "index_zombie_weapons_on_zombie_id"
   end
@@ -51,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170901160504) do
   create_table "zombies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
     t.integer "hit_points"
-    t.integer "brains_eaten"
+    t.integer "brains_eaten", default: 0
     t.integer "speed"
     t.datetime "turn_date"
     t.datetime "created_at", null: false
