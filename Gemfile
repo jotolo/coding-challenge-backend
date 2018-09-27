@@ -32,6 +32,11 @@ group :development, :test do
   gem 'rspec-rails'
   # Use Faker to create seeds or factories
   gem 'faker', git: 'https://github.com/stympy/faker'
+
+  # Test suite
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -43,3 +48,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# TODO: Put gem versions
+
+# Pagination
+gem 'will_paginate'
+
+# Background Jobs
+gem 'sidekiq'
+gem 'sidekiq-cron'
+
+# Documentation
+gem 'apipie-rails'
