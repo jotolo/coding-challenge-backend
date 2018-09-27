@@ -1,6 +1,6 @@
 Apipie.configure do |config|
   config.app_name                = 'BadiCodingChallengeBackend'
-  config.api_base_url            = '/api'
+  config.api_base_url            = ''
   config.doc_base_url            = '/documentation'
   config.validate                = false
   config.translate               = false
