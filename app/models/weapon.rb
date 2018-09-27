@@ -9,11 +9,8 @@ class Weapon < ApplicationRecord
     zombie_id = params.delete(:zombie_id)
 
     new_weapon = Weapon.new(params)
-    if zombie_id
-      new_weapon.zombie_weapons.build(zombie_id: zombie_id)
-    end
+    new_weapon.zombie_weapons.build(zombie_id: zombie_id) if zombie_id
 
     new_weapon
   end
-
 end

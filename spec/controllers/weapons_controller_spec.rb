@@ -43,14 +43,16 @@ RSpec.describe WeaponsController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a success response', :show_in_doc do
-      weapon = Weapon.create! valid_attributes
+      Weapon.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
 
     it 'returns a 10 elements', :show_in_doc do
       FactoryBot.create_list(:weapon, 50)
-      get :index, params: {page: 1, per_page: 10}, session: valid_session
+      get :index,
+          params: { page: 1, per_page: 10 },
+          session: valid_session
       weapons = JSON.parse(response.body)
       expect(weapons.count).to eq(10)
     end
@@ -58,9 +60,11 @@ RSpec.describe WeaponsController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a success response', :show_in_doc do
-      weapon = Weapon.create! valid_attributes
+      Weapon.create! valid_attributes
       zombie = FactoryBot.create(:zombie)
-      get :index, params: {zombie_id: zombie.id}, session: valid_session
+      get :index,
+          params: { zombie_id: zombie.id },
+          session: valid_session
       expect(response).to be_success
     end
   end
@@ -68,7 +72,9 @@ RSpec.describe WeaponsController, type: :controller do
   describe 'GET #show' do
     it 'returns a success response', :show_in_doc do
       weapon = Weapon.create! valid_attributes
-      get :show, params: {id: weapon.to_param}, session: valid_session
+      get :show,
+          params: { id: weapon.to_param },
+          session: valid_session
       expect(response).to be_success
     end
   end
@@ -77,13 +83,15 @@ RSpec.describe WeaponsController, type: :controller do
     context 'with valid params' do
       it 'creates a new Weapon', :show_in_doc do
         expect {
-          post :create, params: {weapon: valid_attributes}, session: valid_session
+          post :create, params: { weapon: valid_attributes }, session: valid_session
         }.to change(Weapon, :count).by(1)
       end
 
       it 'renders a JSON response with the new weapon', :show_in_doc do
 
-        post :create, params: {weapon: valid_attributes}, session: valid_session
+        post :create,
+             params: { weapon: valid_attributes },
+             session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
         expect(response.location).to eq(weapon_url(Weapon.last))
@@ -93,7 +101,9 @@ RSpec.describe WeaponsController, type: :controller do
     context 'with invalid params' do
       it 'renders a JSON response with errors for the new weapon', :show_in_doc do
 
-        post :create, params: {weapon: invalid_attributes}, session: valid_session
+        post :create,
+             params: { weapon: invalid_attributes },
+             session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -109,7 +119,9 @@ RSpec.describe WeaponsController, type: :controller do
       it 'updates the requested weapon', :show_in_doc do
         weapon = Weapon.create! valid_attributes
         update_attributes = new_attributes
-        put :update, params: {id: weapon.to_param, weapon: update_attributes}, session: valid_session
+        put :update,
+            params: { id: weapon.to_param, weapon: update_attributes },
+            session: valid_session
         weapon.reload
         expect(weapon.name).to eq(new_attributes[:name])
         expect(weapon.attack_points).to eq(new_attributes[:attack_points])
@@ -120,7 +132,9 @@ RSpec.describe WeaponsController, type: :controller do
       it 'renders a JSON response with the weapon', :show_in_doc do
         weapon = Weapon.create! valid_attributes
 
-        put :update, params: {id: weapon.to_param, weapon: valid_attributes}, session: valid_session
+        put :update,
+            params: { id: weapon.to_param, weapon: valid_attributes },
+            session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
       end
@@ -130,7 +144,9 @@ RSpec.describe WeaponsController, type: :controller do
       it 'renders a JSON response with errors for the weapon', :show_in_doc do
         weapon = Weapon.create! valid_attributes
 
-        put :update, params: {id: weapon.to_param, weapon: invalid_attributes}, session: valid_session
+        put :update,
+            params: { id: weapon.to_param, weapon: invalid_attributes },
+            session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -141,7 +157,7 @@ RSpec.describe WeaponsController, type: :controller do
     it 'destroys the requested weapon', :show_in_doc do
       weapon = Weapon.create! valid_attributes
       expect {
-        delete :destroy, params: {id: weapon.to_param}, session: valid_session
+        delete :destroy, params: { id: weapon.to_param }, session: valid_session
       }.to change(Weapon, :count).by(-1)
     end
   end

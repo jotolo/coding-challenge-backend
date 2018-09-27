@@ -9,9 +9,7 @@ class Armor < ApplicationRecord
     zombie_id = params.delete(:zombie_id)
 
     new_armor = Armor.new(params)
-    if zombie_id
-      new_armor.zombie_armors.build(zombie_id: zombie_id)
-    end
+    new_armor.zombie_armors.build(zombie_id: zombie_id) if zombie_id
 
     new_armor
   end

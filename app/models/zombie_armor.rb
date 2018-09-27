@@ -5,7 +5,8 @@ class ZombieArmor < ApplicationRecord
   before_create :set_durability
 
   private
+
   def set_durability
-    self.armor_durability = self.armor.durability || 0
+    self.armor_durability = armor.durability || 0
   end
 end

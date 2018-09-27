@@ -1,10 +1,24 @@
 AllCops:
   Exclude:
     - 'spec/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
   TargetRubyVersion: 2.4
 
 Metrics/LineLength:
-  Max: 120
+  Max: 150
+
+Metrics/ClassLength:
+  Max: 150
 
 FrozenStringLiteralComment:
-Enabled: false
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
