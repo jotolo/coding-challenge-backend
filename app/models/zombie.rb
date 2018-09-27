@@ -18,4 +18,21 @@ class Zombie < ApplicationRecord
     search_scope = search_scope.joins(zombie_weapons: [:weapon]).where('weapons.id IN (:ids)', ids: params[:weapon_ids]) if params[:weapon_ids]
     search_scope
   }
+
+  def self.factory(params)
+    armor_ids = params.delete(:armor_ids)
+    weapon_ids = params.delete(:weapon_ids)
+
+    new_zombie = Zombie.new(params)
+
+    armor_ids&.each do |armor_id|
+      new_zombie.zombie_armors.build(armor_id: armor_id)
+    end
+
+    weapon_ids&.each do |weapon_id|
+      new_zombie.zombie_weapons.build(weapon_id: weapon_id)
+    end
+
+    new_zombie
+  end
 end
