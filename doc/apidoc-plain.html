@@ -1,0 +1,1349 @@
+  <h4><a href='#armors'>Armors</a></h4>
+  <ul>
+      <li><a href='#armors-index'>index</a></li>
+      <li><a href='#armors-show'>show</a></li>
+      <li><a href='#armors-create'>create</a></li>
+      <li><a href='#armors-update'>update</a></li>
+      <li><a href='#armors-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#weapons'>Weapons</a></h4>
+  <ul>
+      <li><a href='#weapons-index'>index</a></li>
+      <li><a href='#weapons-show'>show</a></li>
+      <li><a href='#weapons-create'>create</a></li>
+      <li><a href='#weapons-update'>update</a></li>
+      <li><a href='#weapons-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#zombies'>Zombies</a></h4>
+  <ul>
+      <li><a href='#zombies-index'>index</a></li>
+      <li><a href='#zombies-show'>show</a></li>
+      <li><a href='#zombies-create'>create</a></li>
+      <li><a href='#zombies-update'>update</a></li>
+      <li><a href='#zombies-destroy'>destroy</a></li>
+      <li><a href='#zombies-add_armors'>add_armors</a></li>
+      <li><a href='#zombies-add_weapons'>add_weapons</a></li>
+      <li><a href='#zombies-eat_brain'>eat_brain</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="armors">
+      <a href='#armors'>Armors</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="armors-index">
+      <a href='#armors'>Armors</a> / <a href='#armors-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/armors
+            <br>
+            <small>Return all armors</small>
+          </h4>
+          <h4>
+              GET /api/zombies/:zombie_id/armors
+            <br>
+            <small>Return all armors belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return all armors.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Page number you want to list. Default: 1</p>
+
+    </li>
+    
+    <li>
+      <strong>per_page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="armors-show">
+      <a href='#armors'>Armors</a> / <a href='#armors-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/armors/1
+            <br>
+            <small>Return an specific armors</small>
+          </h4>
+          <h4>
+              GET /api/zombies/:zombie_id/armors/1
+            <br>
+            <small>Return an specific armors belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return an armor by id.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="armors-create">
+      <a href='#armors'>Armors</a> / <a href='#armors-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/armors
+            <br>
+            <small>Create an armor</small>
+          </h4>
+          <h4>
+              POST /api/zombies/:zombie_id/armors
+            <br>
+            <small>Create an armor belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Create an armor.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not create the armor.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>defense_points </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>durability </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="armors-update">
+      <a href='#armors'>Armors</a> / <a href='#armors-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/armors/1
+            <br>
+            <small>Update an armor</small>
+          </h4>
+          <h4>
+              PUT /api/zombies/:zombie_id/armors/1
+            <br>
+            <small>Update an armor belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Update an armor.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not save the armor.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>defense_points </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>durability </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="armors-destroy">
+      <a href='#armors'>Armors</a> / <a href='#armors-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/armors/1
+            <br>
+            <small>Destroy an armor</small>
+          </h4>
+          <h4>
+              DELETE /api/zombies/:zombie_id/armors/1
+            <br>
+            <small>Destroy an armor belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Destroy an armor.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="weapons">
+      <a href='#weapons'>Weapons</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="weapons-index">
+      <a href='#weapons'>Weapons</a> / <a href='#weapons-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/weapons
+            <br>
+            <small>Return all weapons</small>
+          </h4>
+          <h4>
+              GET /api/zombies/:zombie_id/weapons
+            <br>
+            <small>Return all weapons belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return all weapons.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Page number you want to list. Default: 1</p>
+
+    </li>
+    
+    <li>
+      <strong>per_page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="weapons-show">
+      <a href='#weapons'>Weapons</a> / <a href='#weapons-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/weapons/1
+            <br>
+            <small>Return a weapon</small>
+          </h4>
+          <h4>
+              GET /api/zombies/:zombie_id/weapons/1
+            <br>
+            <small>Return a weapon belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return a weapon.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="weapons-create">
+      <a href='#weapons'>Weapons</a> / <a href='#weapons-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/weapons
+            <br>
+            <small>Create an weapon</small>
+          </h4>
+          <h4>
+              POST /api/zombies/:zombie_id/weapons
+            <br>
+            <small>Create an weapon belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Create a weapon.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not create the weapon.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>attack_points </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>durability </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="weapons-update">
+      <a href='#weapons'>Weapons</a> / <a href='#weapons-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/weapons/1
+            <br>
+            <small>Update an weapon</small>
+          </h4>
+          <h4>
+              PUT /api/zombies/:zombie_id/weapons/1
+            <br>
+            <small>Update an weapon belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Update a weapon.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not save the weapon.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>attack_points </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>durability </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="weapons-destroy">
+      <a href='#weapons'>Weapons</a> / <a href='#weapons-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/weapons/1
+            <br>
+            <small>Destroy a weapon</small>
+          </h4>
+          <h4>
+              DELETE /api/zombies/:zombie_id/weapons/1
+            <br>
+            <small>Destroy an weapon belonging to an specific zombie.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Destroy an weapon.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="zombies">
+      <a href='#zombies'>Zombies</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="zombies-index">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/zombies
+            <br>
+            <small>Return all zombies or search for specific zombies.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return or search for zombies.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Page number you want to list. Default: 1</p>
+
+    </li>
+    
+    <li>
+      <strong>per_page </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+    </li>
+    
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Search by name.</p>
+
+    </li>
+    
+    <li>
+      <strong>hit_points </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Search by hit_points.</p>
+
+    </li>
+    
+    <li>
+      <strong>speed </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Search by speed.</p>
+
+    </li>
+    
+    <li>
+      <strong>brains_eaten </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Search by brains_eaten.</p>
+
+    </li>
+    
+    <li>
+      <strong>turn_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Date</p>
+ ]
+      </small>
+      
+<p>Search by turn_date.</p>
+
+    </li>
+    
+    <li>
+      <strong>armor_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Search zombies who has armors by IDs.</p>
+
+    </li>
+    
+    <li>
+      <strong>weapon_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Search zombies who has weapons by IDs.</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-show">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/zombies/1
+            <br>
+            <small>Return an specific zombie</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return an zombie by id.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-create">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/armors
+            <br>
+            <small>Create an armor</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Create an zombie.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not create the zombie.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>hit_points </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>speed </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>brains_eaten </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>turn_date </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Date</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>armor_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Search zombies who has armors by IDs.</p>
+
+    </li>
+    
+    <li>
+      <strong>weapon_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Search zombies who has weapons by IDs.</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-update">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/zombies/1
+            <br>
+            <small>Update a zombie</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Update a zombie.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not save the zombie.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>hit_points </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>speed </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>brains_eaten </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>turn_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Date</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>armor_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>weapon_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-destroy">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/zombies/1
+            <br>
+            <small>Destroy a zombie</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Destroy an zombie.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-add_armors">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-add_armors'>add_armors</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/zombies/1/add_armors
+            <br>
+            <small>Add armors to zombie</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Add armors to zombie.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not save the zombie.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>armor_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-add_weapons">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-add_weapons'>add_weapons</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/zombies/1/add_weapons
+            <br>
+            <small>Add weapons to zombie</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Add weapons to zombie.</p>
+
+
+          <h4>Errors</h4>
+            422
+            Could not save the zombie.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>weapon_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="zombies-eat_brain">
+      <a href='#zombies'>Zombies</a> / <a href='#zombies-eat_brain'>eat_brain</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/zombies/1/eat_brain
+            <br>
+            <small>Allow zombies to eat brains.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Allow zombies to eat brains.</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+  </div>

@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+          <h4><a href='#armors'>Armors</a></h4>
+  <ul>
+      <li><a href='#armors-index'>index</a></li>
+      <li><a href='#armors-show'>show</a></li>
+      <li><a href='#armors-create'>create</a></li>
+      <li><a href='#armors-update'>update</a></li>
+      <li><a href='#armors-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#weapons'>Weapons</a></h4>
+  <ul>
+      <li><a href='#weapons-index'>index</a></li>
+      <li><a href='#weapons-show'>show</a></li>
+      <li><a href='#weapons-create'>create</a></li>
+      <li><a href='#weapons-update'>update</a></li>
+      <li><a href='#weapons-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#zombies'>Zombies</a></h4>
+  <ul>
+      <li><a href='#zombies-index'>index</a></li>
+      <li><a href='#zombies-show'>show</a></li>
+      <li><a href='#zombies-create'>create</a></li>
+      <li><a href='#zombies-update'>update</a></li>
+      <li><a href='#zombies-destroy'>destroy</a></li>
+      <li><a href='#zombies-add_armors'>add_armors</a></li>
+      <li><a href='#zombies-add_weapons'>add_weapons</a></li>
+      <li><a href='#zombies-eat_brain'>eat_brain</a></li>
+  </ul>
+
+
+
+<div>
+<p>API documentation for Badi&#39;s Coding Challenge Backend.</p>
+</div>
+
+<hr>
+
+
+  <ul class='breadcrumb'  id='armors'>
+    <li><a href='#'>BadiCodingChallengeBackend</a><span class='divider'>/</span></li>
+    <li class='active'>Armors</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#armors'>Armors</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='armors-index'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#armors'>Armors</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#armors-index'>
+              GET /api/armors
+            </a><br>
+            <small>Return all armors</small>
+          </h3>
+          <h3>
+            <a href='#armors-index'>
+              GET /api/zombies/:zombie_id/armors
+            </a><br>
+            <small>Return all armors belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return all armors.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Page number you want to list. Default: 1</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>per_page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='armors-show'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#armors'>Armors</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#armors-show'>
+              GET /api/armors/1
+            </a><br>
+            <small>Return an specific armors</small>
+          </h3>
+          <h3>
+            <a href='#armors-show'>
+              GET /api/zombies/:zombie_id/armors/1
+            </a><br>
+            <small>Return an specific armors belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return an armor by id.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='armors-create'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#armors'>Armors</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#armors-create'>
+              POST /api/armors
+            </a><br>
+            <small>Create an armor</small>
+          </h3>
+          <h3>
+            <a href='#armors-create'>
+              POST /api/zombies/:zombie_id/armors
+            </a><br>
+            <small>Create an armor belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Create an armor.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not create the armor.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>defense_points </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>durability </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='armors-update'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#armors'>Armors</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#armors-update'>
+              PUT /api/armors/1
+            </a><br>
+            <small>Update an armor</small>
+          </h3>
+          <h3>
+            <a href='#armors-update'>
+              PUT /api/zombies/:zombie_id/armors/1
+            </a><br>
+            <small>Update an armor belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Update an armor.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not save the armor.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>defense_points </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>durability </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='armors-destroy'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#armors'>Armors</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#armors-destroy'>
+              DELETE /api/armors/1
+            </a><br>
+            <small>Destroy an armor</small>
+          </h3>
+          <h3>
+            <a href='#armors-destroy'>
+              DELETE /api/zombies/:zombie_id/armors/1
+            </a><br>
+            <small>Destroy an armor belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Destroy an armor.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='weapons'>
+    <li><a href='#'>BadiCodingChallengeBackend</a><span class='divider'>/</span></li>
+    <li class='active'>Weapons</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#weapons'>Weapons</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='weapons-index'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#weapons'>Weapons</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#weapons-index'>
+              GET /api/weapons
+            </a><br>
+            <small>Return all weapons</small>
+          </h3>
+          <h3>
+            <a href='#weapons-index'>
+              GET /api/zombies/:zombie_id/weapons
+            </a><br>
+            <small>Return all weapons belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return all weapons.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Page number you want to list. Default: 1</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>per_page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='weapons-show'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#weapons'>Weapons</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#weapons-show'>
+              GET /api/weapons/1
+            </a><br>
+            <small>Return a weapon</small>
+          </h3>
+          <h3>
+            <a href='#weapons-show'>
+              GET /api/zombies/:zombie_id/weapons/1
+            </a><br>
+            <small>Return a weapon belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return a weapon.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='weapons-create'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#weapons'>Weapons</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#weapons-create'>
+              POST /api/weapons
+            </a><br>
+            <small>Create an weapon</small>
+          </h3>
+          <h3>
+            <a href='#weapons-create'>
+              POST /api/zombies/:zombie_id/weapons
+            </a><br>
+            <small>Create an weapon belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Create a weapon.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not create the weapon.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>attack_points </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>durability </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='weapons-update'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#weapons'>Weapons</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#weapons-update'>
+              PUT /api/weapons/1
+            </a><br>
+            <small>Update an weapon</small>
+          </h3>
+          <h3>
+            <a href='#weapons-update'>
+              PUT /api/zombies/:zombie_id/weapons/1
+            </a><br>
+            <small>Update an weapon belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Update a weapon.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not save the weapon.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>attack_points </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>durability </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='weapons-destroy'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#weapons'>Weapons</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#weapons-destroy'>
+              DELETE /api/weapons/1
+            </a><br>
+            <small>Destroy a weapon</small>
+          </h3>
+          <h3>
+            <a href='#weapons-destroy'>
+              DELETE /api/zombies/:zombie_id/weapons/1
+            </a><br>
+            <small>Destroy an weapon belonging to an specific zombie.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Destroy an weapon.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='zombies'>
+    <li><a href='#'>BadiCodingChallengeBackend</a><span class='divider'>/</span></li>
+    <li class='active'>Zombies</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#zombies'>Zombies</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-index'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-index'>
+              GET /api/zombies
+            </a><br>
+            <small>Return all zombies or search for specific zombies.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return or search for zombies.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Page number you want to list. Default: 1</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>per_page </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Elements per page you want to list. Default: 30</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search by name.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>hit_points </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search by hit_points.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>speed </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search by speed.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>brains_eaten </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search by brains_eaten.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>turn_date </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search by turn_date.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Date</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>armor_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search zombies who has armors by IDs.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>weapon_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search zombies who has weapons by IDs.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-show'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-show'>
+              GET /api/zombies/1
+            </a><br>
+            <small>Return an specific zombie</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return an zombie by id.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-create'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-create'>
+              POST /api/armors
+            </a><br>
+            <small>Create an armor</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Create an zombie.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not create the zombie.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>hit_points </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>speed </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>brains_eaten </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>turn_date </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Date</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>armor_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search zombies who has armors by IDs.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>weapon_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Search zombies who has weapons by IDs.</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-update'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-update'>
+              PUT /api/zombies/1
+            </a><br>
+            <small>Update a zombie</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Update a zombie.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not save the zombie.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>hit_points </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>speed </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>brains_eaten </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>turn_date </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Date</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>armor_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>weapon_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-destroy'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-destroy'>
+              DELETE /api/zombies/1
+            </a><br>
+            <small>Destroy a zombie</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Destroy an zombie.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-add_armors'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>add_armors</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-add_armors'>
+              POST /api/zombies/1/add_armors
+            </a><br>
+            <small>Add armors to zombie</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Add armors to zombie.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not save the zombie.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>armor_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-add_weapons'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>add_weapons</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-add_weapons'>
+              POST /api/zombies/1/add_weapons
+            </a><br>
+            <small>Add weapons to zombie</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Add weapons to zombie.</p>
+
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Could not save the zombie.</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>weapon_ids </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be an array of any type</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='zombies-eat_brain'>
+        <li>
+          <a href='#'>BadiCodingChallengeBackend</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#zombies'>Zombies</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>eat_brain</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#zombies-eat_brain'>
+              POST /api/zombies/1/eat_brain
+            </a><br>
+            <small>Allow zombies to eat brains.</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Allow zombies to eat brains.</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='./apidoc/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/apipie.js'></script>
+</body>
+</html>
