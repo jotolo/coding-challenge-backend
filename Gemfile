@@ -31,18 +31,18 @@ group :development, :test do
   # debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use Rspec as testing tool
-  gem 'rspec-rails'
+  gem 'rspec-rails', '3.8.0'
   # Use Faker to create seeds or factories
   gem 'faker', git: 'https://github.com/stympy/faker'
 
   # Test suite
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
-  gem 'shoulda-matchers'
+  gem 'factory_bot_rails', '4.11.1'
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'shoulda-matchers', '3.1.2'
 
   # Linters
-  gem 'overcommit'
-  gem 'rubocop'
+  gem 'overcommit', '0.46.0'
+  gem 'rubocop', '0.59.2'
 end
 
 group :test do
@@ -64,17 +64,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# TODO: Put gem versions
-
 # Pagination
-gem 'will_paginate'
+gem 'will_paginate', '3.1.6'
 
 # Background Jobs
-gem 'sidekiq'
-gem 'sidekiq-cron'
+gem 'sidekiq', '5.2.2'
+gem 'sidekiq-cron', '1.0.4'
 
 # Documentation
-gem 'apipie-rails'
+gem 'apipie-rails', '0.5.10'
 
 # GraphQL
 gem 'graphql', '1.7.14'

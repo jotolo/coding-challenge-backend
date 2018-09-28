@@ -225,9 +225,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  apipie-rails
+  apipie-rails (= 0.5.10)
   byebug
-  factory_bot_rails
+  factory_bot_rails (= 4.11.1)
   faker!
   graphiql-rails (= 1.4.10)
   graphql (= 1.7.14)
@@ -236,21 +236,21 @@ DEPENDENCIES
   graphql-preload (= 1.0.4)
   listen (>= 3.0.5, < 3.2)
   mysql2 (~> 0.5.2)
-  overcommit
+  overcommit (= 0.46.0)
   puma (~> 3.7)
   rails (~> 5.1.3)
-  rails-controller-testing
-  rspec-rails
-  rubocop
-  shoulda-matchers
-  sidekiq
-  sidekiq-cron
+  rails-controller-testing (= 1.0.2)
+  rspec-rails (= 3.8.0)
+  rubocop (= 0.59.2)
+  shoulda-matchers (= 3.1.2)
+  sidekiq (= 5.2.2)
+  sidekiq-cron (= 1.0.4)
   simplecov (= 0.16.1)
   simplecov-csv (= 0.1.3)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  will_paginate
+  will_paginate (= 3.1.6)
 
 BUNDLED WITH
    1.16.5
