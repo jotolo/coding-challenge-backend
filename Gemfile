@@ -72,3 +72,9 @@ gem 'sidekiq-cron'
 
 # Documentation
 gem 'apipie-rails'
+
+# GraphQL
+gem 'graphql', '1.7.14'
+gem 'graphql-batch', '0.3.9'
+gem 'graphql-errors', '0.2.0'
+gem 'graphql-preload', '1.0.4'
