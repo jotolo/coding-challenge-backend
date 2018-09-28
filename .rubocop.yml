@@ -1,0 +1,46 @@
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+  TargetRubyVersion: 2.4
+
+Metrics/LineLength:
+  Max: 150
+
+Metrics/ClassLength:
+  Max: 150
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 35
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+

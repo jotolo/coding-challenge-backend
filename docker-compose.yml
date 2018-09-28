@@ -11,13 +11,17 @@ services:
       API_DB_NAME: coding-challenge-api
       API_DB_TEST_NAME: coding-challenge-api-test
       API_DB_PASSWORD: M9S8TsR7z7SG6Y
+      REDIS_PROVIDER: redis
+      REDIS_PORT: '6379'
+      APIPIE_RECORD: examples
     ports:
       - "3000:3000"
     links:
       - mysql
+      - redis
     volumes:
-      - ${PWD}:/opt/coding-challenge-api
-    command: /bin/bash -c "sleep 25; rake db:drop db:create db:migrate && rails server -b 0.0.0.0"
+      - .:/opt/coding-challenge-api
+    command: /bin/bash -c "sleep 25; rake db:drop db:create db:migrate && sidekiq -L sidekiq.log -d && rails server -b 0.0.0.0"
   mysql:
     container_name: coding-challenge-mysql
     build:
@@ -27,3 +31,8 @@ services:
       MYSQL_DATABASE: coding-challenge-api
       MYSQL_ROOT_PASSWORD: M9S8TsR7z7SG6Y
     command: "--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci "
+  redis:
+      image: redis
+      container_name: coding-challenge-redis
+      ports:
+        - '6379:6379'
