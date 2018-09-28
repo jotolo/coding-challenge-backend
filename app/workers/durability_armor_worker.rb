@@ -5,6 +5,6 @@ class DurabilityArmorWorker
   def perform(armor_id)
     zombie_armor = ZombieArmor.find_by(id: armor_id)
 
-    zombie_armor&.decrement!(:armor_durability) if zombie_armor
+    zombie_armor&.decrement!(:armor_durability)
   end
 end
